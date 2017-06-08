@@ -1,5 +1,5 @@
 # mydocs
-I'll put my documentation on md files here
+Just a placeholder for my own documents and notes
 
-
-[Ruby on Rails - Plain and simple](RoR_plain_and_simple.md)
+* [Ruby on Rails - Plain and simple](RoR_plain_and_simple.md)
+* [CSS on a nutshell](CSS_on_a_nutshell.md)
