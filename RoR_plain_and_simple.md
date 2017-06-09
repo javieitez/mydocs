@@ -147,4 +147,6 @@ to
                         length: { minimum: 5 }
     end
     
-in the model `file app/models/(whatever).rb` Rails takes care of everything else. 
+in the model file `app/models/(whatever).rb`. Rails takes care of everything else. 
+
+
