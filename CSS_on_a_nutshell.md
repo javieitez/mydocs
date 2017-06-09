@@ -18,7 +18,34 @@ As a good practice, use consistent names across the whole project.
 ### Nested Targeting 
 
 * `a {}` targets all _a href_ links across the whole project
-* `.description-box p a {}` targets all _a href_ links that are inside a p tag that is inside a div (or anything else) that belongs to the class _description-box_
+* `.description-box a p {}` targets all _a href_ links that are inside a p tag that is inside a div (or anything else) that belongs to the class _description-box_
+    * declared elements are parsed by the browser from right to left
 
 Styles that are more precisely targeted take priority over generic ones, so the second example on the list above would apply that style to the a links that specifically match the criteria, overwriting the generic style. All other a links of the project would fit to the generic style.
 
+As a rule of thumb, do NOT declare more than three elemnts at once. Avoid stuff like this: `.description-box a li p {}` 
+
+Styles can be nested inside each other, exactly the same way as html tags.
+
+    .microposts {
+      list-style: none;
+      padding: 0;
+      li {
+         padding: 10px 0;
+         border-top: 1px solid #e8e8e8;
+         }
+      .user {
+         margin-top: 5em;
+         padding-top: 0;
+         }
+      }
+
+### Multiple targeting
+
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 1;
+    }
+
+
+
+### 
