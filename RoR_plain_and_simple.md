@@ -8,17 +8,18 @@
 
 #### REST
 
-* **R**
-* **E**
-* **S**
-* **T**
+* **RE**presentational 
+* **S**tate
+* **T**ransfer: a set of standards for granting client-server complex interactions, regardless of the nature of the servers and browsers present at each end
 
 #### CRUD
 
-* **C**
-* **R**
-* **U**
-* **D**
+* **C**reate
+* **R**ead
+* **U**pdate
+* **D**elete or **D**estroy
+
+Both REST and CRUD are based on standard http methods: GET, POST, PUT and DELETE.
 
 ### Basic Setup
 Make a new project and update all required gems. Also, initialize the folder for git
