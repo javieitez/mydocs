@@ -107,13 +107,13 @@ after the migration file is created under `db/migrate`, run
 
 to add the new fields to the db. Migrations are cumulative and reversible.
 
-# Link_to
+### Link_to
 
     <%= link_to 'Published Articles', controller: 'articles' %>
 
 the `link_to` method can link to a controller or to a path defined on routes.rb 
 
-# Validate a model
+### Validate a model
 
 To validate an input on submission, add to `app/models/modelname.rb`
 
