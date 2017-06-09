@@ -1,4 +1,4 @@
-* Elements are just named. Like `div {}`
+* Elements are just targeted by name. Like `div {}`
 * IDs are preceded by a hash. `#disclaimer {}` matches `<div id="disclaimer">`
 * IDs must be unique.
     * Styles on IDs have preference over styles on classes
@@ -14,4 +14,11 @@
 
 As a good practice, stick to functional names (IE: _disabled_ instead of _gray_). Use things like `class="warning"` instead of `class="red"`.
 As a good practice, use consistent names across the whole project.
+
+### Nested Targeting 
+
+* `a {}` targets all _a href_ links across the whole project
+* `.description-box p a {}` targets all _a href_ links that are inside a p tag that is inside a div (or anything else) that belongs to the class _description-box_
+
+Styles that are more precisely targeted take priority over generic ones, so the second example on the list above would apply that style to the a links that specifically match the criteria, overwriting the generic style. All other a links of the project would fit to the generic style.
 
