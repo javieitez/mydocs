@@ -1,4 +1,4 @@
-# Basic Setup
+### Basic Setup
 Make a new project and update all required gems. Also, initialize the folder for git
 
     rails new projectname
@@ -18,19 +18,19 @@ Add to `config/routes.rb`
 
       root 'controller#action'
 
-# Configure Resources
+### Configure Resources
 
 Add the plural name of your resources to `config/routes.rb`. IE: Articles in a blog
 
     resources :articles 
 
-This will create the CRUD actions, check them with ´rails routes´. Next, create the controller for these.
+This will create the CRUD actions, check them with `rails routes`. Next, create the controller for these.
 
     rails generate controller Articles
 
 Create the file `app/views/articles/new.html.erb` and add some content
 
-# Create forms, 
+### Create forms, 
 
 Use the `form_for` builder syntax. DB fields are preceded by a semicolon. 
 
@@ -52,7 +52,7 @@ IE: To submit articles to an **articles** table that contains **title** and **te
 The `url: articles_path` parameter implies the POST path created when the `articles` resource was generated.
 
 
-# Define actions
+### Define actions
 
 define actions in `app/controllers/articles_controller.rb`
 
@@ -72,7 +72,7 @@ IE: to create new DB entry when submitting a form
         params.require(:article).permit(:title, :text)
       end
 
-# Create the DB model
+### Create the DB model
 
 Use the controller's singular for the model name and specify the fields as parameters
 
@@ -106,7 +106,7 @@ This will only return `false` when entering the article. Further actions must be
         render 'new'
       end
 
-# Model associations
+### Model associations
 
 You can create successive migrations (a second, third, etc.. set of DB objects to be added to the Database) and associate each entry with a DB entry of the previous model.
 
@@ -123,4 +123,28 @@ this generates the following in the modelfile `app/models/comment.rb`
     Class Comment < ApplicationRecord
       belongs_to :article
     end
+The association needs to be declared on the other object as well
 
+    class Article < ApplicationRecord
+      has_many :comments
+      validates :title, presence: true,
+                        length: { minimum: 5 }
+    end
+
+### Deleting associated records
+
+The dependency is declared on the association itself:
+
+add
+
+     dependent: :destroy
+
+to 
+
+    class Article < ApplicationRecord
+      has_many :comments, dependent: :destroy
+      validates :title, presence: true,
+                        length: { minimum: 5 }
+    end
+    
+in the model `file app/models/(whatever).rb` Rails takes care of everything else. 
