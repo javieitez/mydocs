@@ -1,6 +1,9 @@
 * Elements are just named. Like `div {}`
 * IDs are preceded by a hash. `#disclaimer {}` matches `<div id="disclaimer">`
-* IDs must be unique. Classes are preferable for formatting. IDs are better for placing text on a given DIV using JavaScript. 
+* IDs must be unique.
+    * Styles on IDs have preference over styles on classes
+    * Classes are preferable for formatting. 
+    * IDs are better for placing text on a given DIV using JavaScript. 
 * Classes are preceded by a dot. `.alert-box {}` matches `<div id="disclaimer" class="alert-box">` 
 
 ### Naming Conventions
