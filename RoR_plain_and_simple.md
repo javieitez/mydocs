@@ -1,3 +1,25 @@
+### Basic concepts
+
+#### MVC
+
+* **M**odel -- Defines the objects on the DB, along with their relations and permissions
+* **V**iew -- Sets the interface for the user to do things. Views are mostly _.hml.erb_ and _js_ files.
+* **C**ontroller -- Defines the actions (Ruby methods) that are applied to the DB objects when the users do things on the views. 
+
+#### REST
+
+* **R**
+* **E**
+* **S**
+* **T**
+
+#### CRUD
+
+* **C**
+* **R**
+* **U**
+* **D**
+
 ### Basic Setup
 Make a new project and update all required gems. Also, initialize the folder for git
 
