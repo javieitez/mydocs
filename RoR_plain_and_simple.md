@@ -81,19 +81,23 @@ define actions in `app/controllers/articles_controller.rb`
 
 IE: to create new DB entry when submitting a form
 
+```ruby
     def create
         @article = Article.new(article_params)
  
         @article.save
         redirect_to @article
     end
+```
 
 `article_params` must be defined as a private method at the bottom of the file, this allows the params code part to be reusable (IE: for the `update` action), which is the standard practice in both Ruby and Rails
 
+```ruby
     private
       def article_params
         params.require(:article).permit(:title, :text)
       end
+```
 
 ### Create the DB model
 
@@ -117,17 +121,21 @@ the `link_to` method can link to a controller or to a path defined on routes.rb
 
 To validate an input on submission, add to `app/models/modelname.rb`
 
+```ruby
     class Article < ApplicationRecord
       validates :title, presence: true,
                         length: { minimum: 5 }
     end
+```
 This will only return `false` when entering the article. Further actions must be defined on the object's controller under `app/controllers/controllername.rb`. IE:
 
+```ruby
       if @article.save
         redirect_to @article
       else
         render 'new'
       end
+```
 
 ### Model associations
 
@@ -143,33 +151,37 @@ The relationship is set by using the type `references`
 
 this generates the following in the modelfile `app/models/comment.rb`
 
+```ruby
     Class Comment < ApplicationRecord
       belongs_to :article
     end
+```
 The association needs to be declared on the other object as well
 
+```ruby
     class Article < ApplicationRecord
       has_many :comments
       validates :title, presence: true,
                         length: { minimum: 5 }
     end
+```
 
 ### Deleting associated records
 
 The dependency is declared on the association itself:
 
 add
-
+```ruby
      dependent: :destroy
-
+```
 to 
-
+```ruby
     class Article < ApplicationRecord
       has_many :comments, dependent: :destroy
       validates :title, presence: true,
                         length: { minimum: 5 }
     end
-    
+```
 in the model file `app/models/(whatever).rb`. Rails takes care of everything else. 
 
 
