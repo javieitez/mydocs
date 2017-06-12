@@ -124,9 +124,17 @@ after the migration file is created under `db/migrate`, run
 
 to add the new fields to the db. Migrations are cumulative and reversible.
 
-### Create records
+### Create, update and delete records
 
-When the `form_for` for the object is submitted, the `new` and `save` methods for that object is called.
+When the `form_for` for the object is submitted, the `new` and `save` methods for that object are called. The same goes for updating, using the `update` method. 
+
+For deleting an exisiting entry, a link or a button can point to the `destroy` method. The confirmation is added on the html.erb file.
+
+```HTML+ERB
+<%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'u fuckin sure?' } %>
+```
 
 ### Validate the user's input
 
