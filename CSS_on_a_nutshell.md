@@ -29,6 +29,7 @@ As a rule of thumb, do NOT declare more than three elemnts at once. Avoid stuff 
 
 Styles can be nested inside each other, exactly the same way as html tags.
 
+```css
     .microposts {
       list-style: none;
       padding: 0;
@@ -41,13 +42,13 @@ Styles can be nested inside each other, exactly the same way as html tags.
          padding-top: 0;
          }
       }
-
+```
 #### Multiple targeting
-
+```css
     h1, h2, h3, h4, h5, h6 {
       line-height: 1;
     }
-
+```
 
 
 ### 
