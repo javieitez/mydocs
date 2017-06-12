@@ -24,19 +24,20 @@ Both REST and CRUD are based on standard http methods: GET, POST, PUT and DELETE
 ### Basic Setup
 Make a new project and update all required gems. Also, initialize the folder for git
 
+```shell
     rails new projectname
     cd projectname
     bundle update
     git init
-
+```
 At this point, you have a working project with a default page. No port or IP provided defaults to localhost:3000.
-
+```shell
     rails server -b $IP -p $PORT
-
+```
 Next we need to create a controller and a view
-
+```shell
     rails generate controller [Controller] [action]
-
+```
 Add to `config/routes.rb`
 
       root 'controller#action'
@@ -48,9 +49,9 @@ Add the plural name of your resources to `config/routes.rb`. IE: Articles in a b
     resources :articles 
 
 This will create the CRUD actions, check them with `rails routes`. Next, create the controller for these.
-
+```shell
     rails generate controller Articles
-
+```
 Create the file `app/views/articles/new.html.erb` and add some content
 
 ### Create forms, 
@@ -59,7 +60,8 @@ Use the `form_for` builder syntax. DB fields are preceded by a semicolon.
 
 IE: To submit articles to an **articles** table that contains **title** and **text** fields
 
-    <%= form_for :article, url: articles_path do |f| %>
+```HTML+ERB
+     <%= form_for :article, url: articles_path do |f| %>
      <p>
         <%= f.label :title %><br>
         <%= f.text_field :title %>
@@ -71,7 +73,7 @@ IE: To submit articles to an **articles** table that contains **title** and **te
          <%= f.submit %>
        </p>
      <% end %>
-
+```
 The `url: articles_path` parameter implies the POST path created when the `articles` resource was generated.
 
 
@@ -112,9 +114,9 @@ after the migration file is created under `db/migrate`, run
 to add the new fields to the db. Migrations are cumulative and reversible.
 
 ### Link_to
-
+```HTML+ERB
     <%= link_to 'Published Articles', controller: 'articles' %>
-
+```
 the `link_to` method can link to a controller or to a path defined on routes.rb 
 
 ### Validate a model
