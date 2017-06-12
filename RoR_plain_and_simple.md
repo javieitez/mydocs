@@ -101,7 +101,18 @@ IE: to create new DB entry when submitting a form
       end
 ```
 
-### Create the DB model
+### Link_to
+```HTML+ERB
+    <%= link_to 'Published Articles', controller: 'articles' %>
+```
+the `link_to` method can link to a controller or to a path defined on routes.rb 
+
+
+# Working with the DB: Migrations
+
+Objects in methods are named using the singuler name (IE: _Book, Article, Product, user_). DB tables referring to these objects contain the pluralized names. Pluralization and singularization are automatic in most of the cases.
+
+### Create the model
 
 Use the controller's singular for the model name and specify the fields as parameters
 
@@ -113,13 +124,9 @@ after the migration file is created under `db/migrate`, run
 
 to add the new fields to the db. Migrations are cumulative and reversible.
 
-### Link_to
-```HTML+ERB
-    <%= link_to 'Published Articles', controller: 'articles' %>
-```
-the `link_to` method can link to a controller or to a path defined on routes.rb 
+### Create records
 
-### Validate a model
+### Validate the user's input
 
 To validate an input on submission, add to `app/models/modelname.rb`
 
