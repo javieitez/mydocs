@@ -138,6 +138,19 @@ For deleting an exisiting entry, a link or a button can point to the `destroy` m
               data: { confirm: 'u fuckin sure?' } %>
 ```
 
+### List DB entries
+
+Add to the view
+
+```HTML+ERB
+<% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+    </tr>
+  <% end %>
+```
+
 ### Validate the user's input
 
 To validate an input on submission, add to `app/models/modelname.rb`
