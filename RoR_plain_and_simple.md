@@ -126,6 +126,8 @@ to add the new fields to the db. Migrations are cumulative and reversible.
 
 ### Create records
 
+When the `form_for` for the object is submitted, the `new` and `save` methods for that object is called.
+
 ### Validate the user's input
 
 To validate an input on submission, add to `app/models/modelname.rb`
