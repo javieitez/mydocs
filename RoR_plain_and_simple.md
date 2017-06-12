@@ -35,10 +35,15 @@ At this point, you have a working project with a default page. No port or IP pro
     rails server -b $IP -p $PORT
 ```
 Next we need to create a controller and a view
-```shell
+
     rails generate controller [Controller] [action]
-```
-Add to `config/routes.rb`
+
+The controller name and action can be anything and doesn't have to relate to what will be in the DB
+
+    rails generate controller Welcome index
+    rails generate controller StaticPages home help
+
+After that, add to `config/routes.rb`
 
       root 'controller#action'
 
