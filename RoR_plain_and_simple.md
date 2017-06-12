@@ -1,4 +1,4 @@
-### Basic concepts
+# Basic concepts
 
 #### MVC
 
@@ -21,7 +21,7 @@
 
 Both REST and CRUD are based on standard http methods: GET, POST, PUT and DELETE.
 
-### Basic Setup
+# Basic Setup
 Make a new project and update all required gems. Also, initialize the folder for git
 
 ```shell
@@ -58,29 +58,6 @@ This will create the CRUD actions, check them with `rails routes`. Next, create 
     rails generate controller Articles
 ```
 Create the file `app/views/articles/new.html.erb` and add some content
-
-### Create forms, 
-
-Use the `form_for` builder syntax. DB fields are preceded by a semicolon. 
-
-IE: To submit articles to an **articles** table that contains **title** and **text** fields
-
-```HTML+ERB
-     <%= form_for :article, url: articles_path do |f| %>
-     <p>
-        <%= f.label :title %><br>
-        <%= f.text_field :title %>
-      </p>
-       <p>
-         <%= f.label :text %><br>
-         <%= f.text_area :text %>
-       </p><p>
-         <%= f.submit %>
-       </p>
-     <% end %>
-```
-The `url: articles_path` parameter implies the POST path created when the `articles` resource was generated.
-
 
 ### Define actions
 
@@ -130,6 +107,26 @@ after the migration file is created under `db/migrate`, run
 to add the new fields to the db. Migrations are cumulative and reversible.
 
 ### Create, update and delete records
+
+Use the `form_for` builder syntax. DB fields are preceded by a semicolon. 
+
+IE: To submit articles to an **articles** table that contains **title** and **text** fields
+
+```HTML+ERB
+     <%= form_for :article, url: articles_path do |f| %>
+     <p>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </p>
+       <p>
+         <%= f.label :text %><br>
+         <%= f.text_area :text %>
+       </p><p>
+         <%= f.submit %>
+       </p>
+     <% end %>
+```
+The `url: articles_path` parameter points to the POST path created when the `articles` resource was generated.
 
 When the `form_for` for the object is submitted, the `new` and `save` methods for that object are called. The same goes for updating, using the `update` method. 
 
