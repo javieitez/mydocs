@@ -10,7 +10,7 @@ git diff
 
 ## Commit to Github
 
-* Create repo on github
+* Create a new repo on github. Don't add a .gitignore or choose a license.
 ```shell
 git remote add origin https://github.com/<yourname>/reponame.git
 git push -u origin master
