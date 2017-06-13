@@ -6,3 +6,4 @@
 
 Tools 
 * http://jsbeautifier.org/ Make unreadable JS code readable again
+* https://codepen.io/ Try CSS+JS+HTML with instant results
