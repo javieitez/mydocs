@@ -18,7 +18,17 @@ git push -u origin master
 
 ## BONUS: Add current branch to prompt
 
-To show the current branch on the prompt, add to the top of `.bashrc`
+### Method 1: use __git_ps1
+
+Add `__git_ps1` to the end of PS1 in `.bashrc`
+
+```shell
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] `__git_ps1`\$ '
+```
+
+### Method 2: Create a function
+
+If `__git_ps1` doesn't work for any reason, add the following to the top of `.bashrc`
 
 ```shell
 # ***** add git's current branch to prompt. ******
