@@ -12,9 +12,11 @@ git diff
 
 * Create a new repo on github. Don't add a .gitignore or choose a license.
 ```shell
-git remote add origin https://github.com/<yourname>/reponame.git
+git remote add origin git@github.com/<yourname>/reponame.git
 git push -u origin master
 ```
+
+*Note:* Don't use https when adding the origin if you want to use an SSH key for authentication. HTTPS asks for the user/password every time the changes are pushed to the repo.
 
 ## BONUS: Add current branch to prompt
 
