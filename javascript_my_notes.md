@@ -18,9 +18,7 @@ console.log(mySentence);
 function say(y) {console.log(y)}; 
 var mySentence = "All work and no play makes jack a dull  boy";
 
-for (i = 0; i <50; i++ ) {
   say(mySentence);
-}
 ```
 
 ### Declare a variable that contains a function
