@@ -72,6 +72,25 @@ var mySentence = "All work and no play makes jack a dull  boy";
 say(mySentence);
 ```
 
+### IF/ELSEIF/ELSE statements
+
+Syntax is `if (condition1) {code} else if (condition2) {code} else {code}`, with as many conditions as needed. 
+
+```javascript
+var d = new Date()
+var t = d.getHours()
+var say = function(y) {console.log(y)}; 
+
+if (t <= 6){
+  say("Too soon to get up");}
+else if (t <= 12 ){
+  say("It's AM");} 
+else if (t >=13 && t < 22 ){
+  say("It's PM");}
+else {
+  say("Go the fuck to sleep");}
+```
+
 ### IIFE functions
 
 **IIFE** stands for **Immediately Invoked Function Expression**. The pattern would be 
