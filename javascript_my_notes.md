@@ -13,7 +13,32 @@ var mySentence = "All work and no play makes jack a dull  boy";
 console.log(mySentence);
 ```
 
-All variables are **by default** defined in **global scope**.
+ * All variables declared outside of a function are **global**.
+ * Functions can overwrite the value of a global variable. 
+
+### Create a FOR loop
+
+for(initial value; until value; increment)
+
+```javascript
+var say = function(y) {console.log(y)}; 
+var mySentence = "All work and no play makes jack a dull  boy";
+
+for (i = 0; i <50; i++ ) {
+  say(mySentence);
+}
+```
+### Create a WHILE loop
+
+The counter must be declared before the loop
+```javascript
+var i = 0;
+
+while (i < 50) {
+    console.log("The number is " + i);
+    i++;   
+}
+```
 
 ### Create a function
 ```javascript
@@ -47,26 +72,10 @@ var mySentence = "All work and no play makes jack a dull  boy";
 say(mySentence);
 ```
 
-### Create a FOR loop
+### IIFE functions
 
-for(initial value; until value; increment)
+**IIFE** stands for **Immediately Invoked Function Expression** and is executed immediately. The pattern would be 
 
 ```javascript
-var say = function(y) {console.log(y)}; 
-var mySentence = "All work and no play makes jack a dull  boy";
-
-for (i = 0; i <50; i++ ) {
-  say(mySentence);
-}
-```
-### Create a WHILE loop
-
-The counter must be declared before the loop
-```javascript
-var i = 0;
-
-while (i < 50) {
-    console.log("The number is " + i);
-    i++;   
-}
+(function functionName(){ /* code */ })();
 ```
