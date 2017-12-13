@@ -74,7 +74,7 @@ say(mySentence);
 
 ### IIFE functions
 
-**IIFE** stands for **Immediately Invoked Function Expression** and is executed immediately. The pattern would be 
+**IIFE** stands for **Immediately Invoked Function Expression**. The pattern would be 
 
 ```javascript
 (function functionName(){ /* code */ })();
