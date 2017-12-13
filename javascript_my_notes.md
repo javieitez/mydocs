@@ -73,6 +73,36 @@ say(mySentence);
 ```
 Function names must **not** be declared inside of `{...}`blocks.
 
+### Function arguments
+
+We can pass multiple arguments to a function, like `function functionName(a, b)`.
+```javascript
+var sum = function (a, b) {
+    return a + b;
+}
+
+console.log(sum(2,2))
+```
+
+If we specify 2 arguments, all parameters beyond the 2nd are ignored. Therefore `sum(2, 2, 2)` would return 4 and not 6. 
+
+We can specify any number of arguments, like `sum(a, b, c, d)` or iterate through an undetermined number of them by using the `arguments.length` property, in array-style. 
+
+```javascript
+var sumall = function() { 
+  var i, total =0;
+  for (i = 0; i < arguments.length; i +=1) {
+    total += arguments[i]
+  }
+  console.log(arguments.length)
+  return total;
+}; 
+
+
+console.log(sumall(2,2,2,5,9));
+```
+
+
 ### IF/ELSEIF/ELSE statements
 
 Syntax is `if (condition1) {code} else if (condition2) {code} else {code}`, with as many conditions as needed. 
