@@ -57,3 +57,14 @@ for (i = 0; i <50; i++ ) {
   say(mySentence);
 }
 ```
+### Create a WHILE loop
+
+The counter must be declared before the loop
+```javascript
+var i = 0;
+
+while (i < 50) {
+    console.log("The number is " + i);
+    i++;   
+}
+```
