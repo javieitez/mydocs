@@ -13,6 +13,8 @@ var mySentence = "All work and no play makes jack a dull  boy";
 console.log(mySentence);
 ```
 
+All variables are **by default** defined in **global scope**.
+
 ### Create a function
 ```javascript
 function say(y) {console.log(y)}; 
