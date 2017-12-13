@@ -71,7 +71,7 @@ var mySentence = "All work and no play makes jack a dull  boy";
 
 say(mySentence);
 ```
-Function names must not be declared inside of `{...}`blocks.
+Function names must **not** be declared inside of `{...}`blocks.
 
 ### IF/ELSEIF/ELSE statements
 
