@@ -1,6 +1,6 @@
 # Working with dates
 
-`/\d\d[\/|\-]\d\d[\/|\-]\d\d\d\d/gi` would return any date in any of the followng formats
+`/\d\d[\/|\-]\d\d[\/|\-]\d\d\d\d/g` would return any date in any of the followng formats
 
 * MM/DD/YYYY
 * DD/MM/YYYY
