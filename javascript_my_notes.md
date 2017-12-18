@@ -187,3 +187,4 @@ any of the previous methods can be combined with a proper regEx to do all sorts 
 'i1,i2,i3,ia,iB,ic'.match(/i[a-z]/gi)
 //returns [ 'ia', 'iB', 'ic' ]
 ```
+See more on [Javascript RegEx](javascript_regex.md)
