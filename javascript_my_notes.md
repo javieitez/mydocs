@@ -139,10 +139,28 @@ Methods can be appended to any string. `match("string")` returns a matching stri
 "abcdefghijk".match("bcd")
 //returns [ 'bcd', index: 1, input: 'abcdefghijk' ]
 ```
-It works the same any with variable containing a string
+It works the same way with any variable containing a string
 ```javascript
 var sampleStr = "abcdefghijk"
 sampleStr.match("d")
 // returns [ 'd', index: 3, input: 'abcdefghijk' ]
 ```
-
+The argument can be a regex instead of a string
+```javascript
+"abcdefghijk".match(/[d-i]/g)
+//returns [ 'd', 'e', 'f', 'g', 'h', 'i' ] 
+```
+Other String object method is  `replace()`.
+```javascript
+"Dark".replace("a", "o")
+//Returns "Dork"
+ 
+"Dark Glass".replace(/a/g, "o")
+//Returns 'Dork Gloss'
+```
+ `split()` returns a string splitted into an array
+```javascript
+  "a list of words".split(" ")
+  //returns [ 'a', 'list', 'of', 'words' ]
+  ```
+ 
