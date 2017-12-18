@@ -158,9 +158,19 @@ Other String object method is  `replace()`.
 "Dark Glass".replace(/a/g, "o")
 //Returns 'Dork Gloss'
 ```
- `split()` returns a string splitted into an array
+ `split()` returns a string splitted with the given limiter into an array
 ```javascript
   "a list of words".split(" ")
   //returns [ 'a', 'list', 'of', 'words' ]
-  ```
- 
+  ``` 
+any of the previous methods can be combined with a proper regEx to do all sorts of transformations 
+```javascript
+'wooden bat, Cat,what a fat cat, a fucking rat, a DAT tape'.match(/[a-z]at/gi)
+//returns [ 'bat', 'Cat', 'hat', 'fat', 'cat', 'rat', 'DAT' ]
+
+'i1,i2,i3,ia,ib,ic'.match(/i[0-9]/g)
+//returns [ 'i1', 'i2', 'i3' ]
+
+'i1,i2,i3,ia,iB,ic'.match(/i[a-z]/gi)
+//returns [ 'ia', 'iB', 'ic' ]
+```
