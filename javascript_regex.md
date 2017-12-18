@@ -1,3 +1,15 @@
+# Delimiting words
+
+```javascript
+'hat chat what hate hatred chatted'.match(/hat/gi)
+// returns 'hat' 6 times
+```
+Use \b\ to indicate the beggining and end of a unique word
+
+```javascript
+'hat chat what hate hatred chatted'.match(/\bhat\b/gi)
+// returns [ 'hat' ]
+```
 # Working with dates
 
 `/\d\d[\/|\-]\d\d[\/|\-]\d\d\d\d/g` would return any date in any of the followng formats
