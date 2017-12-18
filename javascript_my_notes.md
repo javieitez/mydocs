@@ -131,6 +131,16 @@ else {
 ```javascript
 (function functionName(){ /* code */ })();
 ```
+# Regular Expressions
+### Shortcuts
+* `\d` Any digit character (digits are treated as strings, not integers)
+* `\w` Any alphanumeric character (word character)
+* `\s`Any whitespace character (space, tab, newline, and similar)
+* `\D` A character that is not a digit
+* `\W` A non-alphanumeric character
+* `\S` A non-whitespace character
+* `.` Any character except for newline
+
 # Methods
 ### String methods
 
@@ -170,6 +180,9 @@ any of the previous methods can be combined with a proper regEx to do all sorts 
 
 'i1,i2,i3,ia,ib,ic'.match(/i[0-9]/g)
 //returns [ 'i1', 'i2', 'i3' ]
+
+'i1,i2,I3,ia,ib,ic'.match(/i[0-9]/g)
+//returns [ 'i1', 'i2' ]
 
 'i1,i2,i3,ia,iB,ic'.match(/i[a-z]/gi)
 //returns [ 'ia', 'iB', 'ic' ]
