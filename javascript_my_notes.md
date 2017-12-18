@@ -1,3 +1,4 @@
+# Basic Stuff
 ### Declare a variable
 
 The type is automatically detected. This one is numeric
@@ -40,6 +41,7 @@ while (i < 50) {
 }
 ```
 
+# Functions
 ### Create a function
 ```javascript
 function say(y) {console.log(y)}; 
@@ -129,3 +131,18 @@ else {
 ```javascript
 (function functionName(){ /* code */ })();
 ```
+# Methods
+### String methods
+
+Methods can be appended to any string. `match("string")` returns a matching string    
+```javascript
+"abcdefghijk".match("bcd")
+//returns [ 'bcd', index: 1, input: 'abcdefghijk' ]
+```
+It works the same any with variable containing a string
+```javascript
+var sampleStr = "abcdefghijk"
+sampleStr.match("d")
+// returns [ 'd', index: 3, input: 'abcdefghijk' ]
+```
+
