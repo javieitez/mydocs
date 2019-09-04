@@ -12,4 +12,13 @@ If ommitted, **method** defaults to **GET**. This allows us to create a fetch re
 ```javascript
 fetch('https://example.com/api')
 ```
+headers must be declared once. 
 
+```javascript
+fetch('https://example.com/api', {
+  headers: new Headers({
+    'Content-Type': 'application/json'
+  })
+})
+```
+After that,header content can only be appended 
