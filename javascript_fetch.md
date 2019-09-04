@@ -5,6 +5,11 @@
 ## Usage
 
 ```javascript
-fetch()
-
+fetch(method, url, [headers])
 ```
+If ommitted, **method** defaults to **GET**. This allows us to create a fetch request in it's simplest form
+
+```javascript
+fetch('https://example.com/api')
+```
+
