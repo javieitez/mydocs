@@ -19,6 +19,5 @@ fetch('https://example.com/api', {
   headers: new Headers({
     'Content-Type': 'application/json'
   })
-})
 ```
 After that,header content can only be appended 
