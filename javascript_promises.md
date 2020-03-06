@@ -1,3 +1,5 @@
+## Overview 
+
 Seems obvious, but `Promises` need to be declared first, otherwise they would be just regular functions
 
 ```javascript
@@ -31,3 +33,28 @@ var promise = new Promise(function(resolve, reject) {
 
 
 https://www.codingame.com/playgrounds/347/javascript-promises-mastering-the-asynchronous/chaining-the-promises
+
+
+## Add a promise inside a function 
+
+```javascript
+function whatEver() {
+	return new Promise(function(resolve, reject){
+		
+    //Do Something
+    resolve('It went well');
+    
+      })}
+```
+For example, you can add a FETCH query (which is a promise in itself) and wait for it to finish until returning the resolve code.
+
+```javascript
+function fetchAndWait() {
+	return new Promise(function(resolve, reject){
+		fetch(someUrl, initObject)
+		.then(function (response) {
+			if (response.ok) {
+				resolve('OK, logged out');
+			}})
+      })}
+```
