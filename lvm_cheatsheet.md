@@ -31,7 +31,7 @@ Finally, mount the file system
 mount /dev/vgname/lvname/ /media/lvname
 ```
 # Add to /etc/fstab
-
+Once it's mounted, just copy the line from `/etc/mtab`
 
 # Resize LVM volumes
 
