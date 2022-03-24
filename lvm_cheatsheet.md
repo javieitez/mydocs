@@ -35,3 +35,21 @@ Once it's mounted, just copy the line from `/etc/mtab`
 
 # Resize LVM volumes
 
+Resizing goes in 3 steps, not counting the extra disk space creation on the VM
+
+First, extend the partition containing the LVM with parted
+```
+parted /dev/sdX
+```
+at the parted prompt, locate the number of the partition you want to resize
+```
+resizepart (number)
+```
+After that, tell LVM the new space is available
+```
+lvextend -l +100%FREE /dev/mapper/(partition)
+```
+Finally, resize the file system
+```
+resize2fs /dev/vgname/lvname/
+
