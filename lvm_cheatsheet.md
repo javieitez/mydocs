@@ -35,7 +35,7 @@ Once it's mounted, just copy the line from `/etc/mtab`
 
 # Resize LVM volumes
 
-Resizing goes in 3 steps, not counting the extra disk space creation on the VM
+Resizing goes in 4 steps, not counting the extra disk space creation on the VM
 
 First, extend the partition containing the LVM with parted
 ```
@@ -47,9 +47,13 @@ resizepart (number)
 ```
 After that, tell LVM the new space is available
 ```
+pvresize /dev/sdX
+```
+Extend the partition
+```
 lvextend -l +100%FREE /dev/mapper/(partition)
 ```
 Finally, resize the file system
 ```
 resize2fs /dev/vgname/lvname/
-
+```
