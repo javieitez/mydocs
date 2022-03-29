@@ -60,6 +60,6 @@ Finally, resize the file system
 resize2fs /dev/vgname/lvname/
 ```
 
-
-https://carleton.ca/scs/2019/extend-lvm-disk-space/
-https://www.redhat.com/sysadmin/resize-lvm-simple
+## Read more
+* https://carleton.ca/scs/2019/extend-lvm-disk-space/
+* https://www.redhat.com/sysadmin/resize-lvm-simple
