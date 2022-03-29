@@ -56,10 +56,14 @@ Extend the partition
 lvextend -l +100%FREE /dev/mapper/(partition)
 ```
 Finally, resize the file system
+if ext4
 ```
 resize2fs /dev/vgname/lvname/
 ```
-
+if xfs
+```
+xfs_growfs /dev/vgname/lvname/
+```
 ## Read more
 * https://carleton.ca/scs/2019/extend-lvm-disk-space/
 * https://www.redhat.com/sysadmin/resize-lvm-simple
