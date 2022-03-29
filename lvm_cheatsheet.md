@@ -45,6 +45,8 @@ at the parted prompt, locate the number of the partition you want to resize
 ```
 resizepart (number)
 ```
+You can enter `100%` to use all unallocated space
+
 After that, tell LVM the new space is available
 ```
 pvresize /dev/sdX
