@@ -55,8 +55,7 @@ Extend the partition
 ```
 lvextend -l +100%FREE /dev/mapper/(partition)
 ```
-Finally, resize the file system
-if ext4
+Finally, resize the file system. If formatted to ext4
 ```
 resize2fs /dev/vgname/lvname/
 ```
