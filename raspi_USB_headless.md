@@ -5,11 +5,17 @@ https://www.pragmaticlinux.com/2021/08/install-the-raspberry-pi-imager-on-ubuntu
 
 Burn the same OS to both an SD card and a USB drive, with the same options (create user, enable SSH, etc...). 
 
-On the boot partition of the USB drive, open  `cmdline.txt` and find a string similar to 
+On the boot partition of the USB drive, open `cmdline.txt` and find a string similar to 
 ```
 root=PARTUUID=14558a46-02
 ```
-Write down the number. Now backup the same file in the boot partition of the SD card, open it and replace the PARTUUID with the one of the USB drive.
+Write down the number. 
+
+Now create a backup of the `cmdline.txt` file in the boot partition of the SD card.
+
+´cp cmdline.txt  zBOOTfromSD_cmdline.txt´
+
+open `cmdline.txt` and replace the PARTUUID with the one of the USB drive.
 
 ## Optional: add a static IP
 
@@ -44,9 +50,13 @@ If the SSH server is disabled for any reason, create a blank file named `ssh` on
 
 ## Boot from SD and Chroot the USB environment
 
-Restore the /boot/cmdline.txt file from backup and boot from SD.
-
-Once booted, mount the USB partition to `/mnt`
+Backup the current `/boot/cmdline.txt` and restore the old one in order to boot from SD
+```
+sudo mount /dev/mmcblk0p1 /mnt/boot
+sudo cp /mnt/boot/cmdline.txt /mnt/boot/zBOOTfromUSB_cmdline.txt
+sudo cp /mnt/boot/zBOOTfromSD_cmdline.txt /mnt/boot/cmdline.txt
+```
+Once rebooted, mount the USB partition to `/mnt`
 ```
 mount /dev/sda2 /mnt
 ```
@@ -61,3 +71,4 @@ Finally, move into the mounted filesystem:
 ```
 chroot /mnt /bin/bash
 ```
+Make all the necessary changes, then restore the USB boot file and reboot.
