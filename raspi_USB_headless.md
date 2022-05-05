@@ -1,4 +1,4 @@
-# Headless SSH server from an old Raspberry Pi model B
+# Headless SSH server from an old Raspberry Pi model B, using USB storage
 
 Install the Raspberry Pi imager
 https://www.pragmaticlinux.com/2021/08/install-the-raspberry-pi-imager-on-ubuntu-debian-fedora-and-opensuse/
