@@ -13,8 +13,9 @@ Write down the number.
 
 Now create a backup of the `cmdline.txt` file in the boot partition of the SD card.
 
-`cp cmdline.txt  zBOOTfromSD_cmdline.txt`
-
+```
+cp cmdline.txt  zBOOTfromSD_cmdline.txt
+```
 open `cmdline.txt` and replace the PARTUUID with the one of the USB drive.
 
 ## Optional: add a static IP
