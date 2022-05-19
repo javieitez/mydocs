@@ -26,3 +26,10 @@ Run a container with the current folder attached to a mountpoint
 ```
 docker run <image-name> -v "$(pwd):/</mount/point/in/container>" 
 ```
+
+### Networks
+> If two containers are on the same network, they can talk to each other. If they aren't, they can't.
+```
+docker network create <network-name>
+```
+
