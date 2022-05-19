@@ -7,6 +7,12 @@ login to a running container
 ```
 docker exec -it <container-name> /bin/bash
 ```
+stop and delete a running container
+```
+docker rm -f <container-id>
+```
+
+
 ### Volumes
 Create a volume
 ```
