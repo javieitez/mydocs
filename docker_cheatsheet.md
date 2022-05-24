@@ -33,7 +33,7 @@ docker run <image-name> -v "$(pwd):/</mount/point/in/container>"
 docker network create <network-name>
 ```
 
-### Dockerfile 
+### Building images 
 
 Example Dockerfile
 
@@ -48,4 +48,10 @@ COPY . /app
 WORKDIR /app
 # run a command each time the image is executed in a container
 CMD ["node","index.js"]
+```
+
+Create an image from the Dockerfile and the contents of the current dir
+
+``` 
+docker image build -t <image_name>:<tag_version> .
 ```
