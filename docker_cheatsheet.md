@@ -38,9 +38,14 @@ docker network create <network-name>
 Example Dockerfile
 
 ```dockerfile
+# the source OS
 FROM alpine
+# commands to run when creating the image
 RUN apk update && apk add nodejs
+# put local files on a folder inside the image
 COPY . /app
+# make a folder the default path
 WORKDIR /app
+# run a command each time the image is executed in a container
 CMD ["node","index.js"]
 ```
