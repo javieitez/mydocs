@@ -1,6 +1,7 @@
 # Connect to the UART serial console
 
 ![Cable overview](img/USB_serial.jpg)
+
 The red cable can power the Raspberry Pi, or it can be disconnected and a standard USB cable be used instead (preferred). **Do not use both!**
 
 ![Cable overview](img/piconsole_bb.png)
