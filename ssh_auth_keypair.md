@@ -19,5 +19,11 @@ The content of each public key is stored in `∼/.ssh/authorized_keys`, one per 
 
 You can manually copy and paste a key if `ssh-copy-id` fails for any reason
 
-## Source
+## Troubleshooting 
+If it still asks for a password, `tail -f /var/log/secure` on the server.
+
+The user's home folder's permissions must be 700, otherwise the key is rejected and SSH prompts for password.
+
+## Sources
 https://www.redhat.com/sysadmin/configure-ssh-keygen
+https://chemicloud.com/kb/article/ssh-authentication-refused-bad-ownership-or-modes-for-directory/
