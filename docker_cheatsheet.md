@@ -38,6 +38,15 @@ docker run <image-name> -v "$(pwd):/</mount/point/in/container>"
 ```
 docker network create <network-name>
 ```
+to use a specific network driver
+```
+docker network create -d <bridge|overlay|macvlan> <network-name>
+```
+* `bridge` single-host, NATed to the real network
+* `overlay` 
+* `macvlan`
+
+> :point_right: containers on a bridged network can resolve each other's names. The internal Docker DNS server worcks for all containers started with the `--name` or `--net-alias` flag.
 
 ### Building images 
 
