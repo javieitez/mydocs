@@ -14,6 +14,10 @@ docker rm -f <container-id>
 
 
 ### Volumes and storage
+> :information_source: Storage inside containers is volatile: once a container ir removed, the information stored in it is gone forever. 
+
+> :information_source: A volume is just a folder on the host machine mapped to a path on the container.
+
 Create a volume
 ```
 docker volume create <volume-name>
@@ -28,7 +32,7 @@ docker run <image-name> -v "$(pwd):/</mount/point/in/container>"
 ```
 
 ### Networks
-> If two containers are on the same network, they can talk to each other. If they aren't, they can't.
+> :information_source: If two containers are on the same network, they can talk to each other. If they aren't, they can't.
 ```
 docker network create <network-name>
 ```
@@ -57,6 +61,7 @@ docker image build -t <image_name>:<tag_version> .
 ```
 
 ### Docker Swarm
+> :information_source: Manages clusters of Docker nodes and deploys and manages applications, similar to Kubernetes.
 Create a new swarm. The node that you run the command on becomes the first manager.
 ```
 docker swarm init 
@@ -71,7 +76,7 @@ Reveal the command and token needed to join an existing swarm
  ```
  add a service to the swarm
  ```
-docker service create --name my-svc --network my-net -p 80:80 --replicas 10 myrepo/myimage:latest
+docker service create --name my-svc --network my-net -p 80:80 --replicas 10 myrepo/myimage:v1
  ```
  `docker service ls` lists running services, while `docker service ps <service>` and `docker service inspect --pretty` give detailed information.
  
@@ -79,3 +84,9 @@ docker service create --name my-svc --network my-net -p 80:80 --replicas 10 myre
 ```
 docker service scale my-svc=12
 ```
+Update a service with a new image
+```
+docker service update --image myrepo/myimage:v2 --update-parallelism 2 --update-delay 20s my-svc
+```
+Debug a service with `docker service logs my-svc` 
+Remove a service with `docker service rm my-svc` :warning: No confirmation is requested. All nodes are removed immediately.
