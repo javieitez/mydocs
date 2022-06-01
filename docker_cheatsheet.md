@@ -55,3 +55,27 @@ Create an image from the Dockerfile and the contents of the current dir
 ``` 
 docker image build -t <image_name>:<tag_version> .
 ```
+
+### Docker Swarm
+Create a new swarm. The node that you run the command on becomes the first manager.
+```
+docker swarm init 
+```
+Reveal the command and token needed to join an existing swarm
+```
+ docker swarm join-token <manager|worker>
+ ```
+ List all nodes in the swarm
+ ```
+ docker node ls
+ ```
+ add a service to the swarm
+ ```
+docker service create --name my-svc --network my-net -p 80:80 --replicas 10 myrepo/myimage:latest
+ ```
+ `docker service ls` lists running services, while `docker service ps <service>` and `docker service inspect --pretty` give detailed information.
+ 
+ Scale a service up or down (add or remove replicas)
+```
+docker service scale my-svc=12
+```
