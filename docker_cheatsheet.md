@@ -44,7 +44,7 @@ docker network create -d <bridge|overlay|macvlan> <network-name>
 ```
 * `bridge` single host, NATed to the real network
 * `overlay` can span across multiple hosts for containers on each host to communicate directly, even on different physical networks
-* `macvlan`
+* `macvlan` -aka `transparent`- connects directly to the physical network
 
 > :point_right: containers on a bridged network can resolve each other's names. The internal Docker DNS server worcks for all containers started with the `--name` or `--net-alias` flag.
 
