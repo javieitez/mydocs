@@ -91,5 +91,8 @@ Update a service with a new image
 ```
 docker service update --image myrepo/myimage:v2 --update-parallelism 2 --update-delay 20s my-svc
 ```
-Debug a service with `docker service logs my-svc` 
-Remove a service with `docker service rm my-svc` :warning: No confirmation is requested. All nodes are removed immediately.
+Debug a service with `docker service logs my-svc`
+
+Remove a service with `docker service rm my-svc` 
+
+:warning: No confirmation is requested. All nodes are removed immediately.
