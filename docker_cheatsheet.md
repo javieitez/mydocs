@@ -1,5 +1,5 @@
 ### Containers
-list running containers
+List running containers
 ```
 docker ps
 ```
@@ -32,7 +32,9 @@ docker run <image-name> -v "$(pwd):/</mount/point/in/container>"
 ```
 
 ### Networks
-> :information_source: If two containers are on the same network, they can talk to each other. If they aren't, they can't.
+> :information_source: Docker Networks are an abstraction independent of the physical network they rely on. The same network can be distributed across multiple hosts on different physical networks.  
+
+> :point_right: _If two containers are on the same network, they can talk to each other. If they aren't, they can't._
 ```
 docker network create <network-name>
 ```
@@ -62,6 +64,7 @@ docker image build -t <image_name>:<tag_version> .
 
 ### Docker Swarm
 > :information_source: Manages clusters of Docker nodes and deploys and manages applications, similar to Kubernetes.
+
 Create a new swarm. The node that you run the command on becomes the first manager.
 ```
 docker swarm init 
