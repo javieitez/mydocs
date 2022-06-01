@@ -16,7 +16,7 @@ docker rm -f <container-id>
 ### Volumes and storage
 > :information_source: Storage inside containers is volatile: once a container ir removed, the information stored in it is gone forever. 
 
-> :information_source: A volume is just a folder on the host machine mapped to a path on the container.
+> :point_right: _A volume is just a folder on the host machine mapped to a path on the container._
 
 Create a volume
 ```
