@@ -1,4 +1,18 @@
+## Key concepts
+
+* **Image:** a static template for running containers
+  * Images have layers, which can be restoration points 
+* **Container:** a running instance of an image 
+  * You can run multiple instances of the same image
+  * Containers have a state and can change
+  * Changes are preserved during the life of the container, but are lost if the container is removed
+* **Storage:** can be attached to a container to save data there 
+
 ### Containers
+Run a container
+```
+docker container run <container:label>
+```
 List running containers
 ```
 docker ps
