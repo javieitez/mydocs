@@ -70,6 +70,8 @@ docker network create -d [bridge|overlay|macvlan] [network-name]
 
 > :point_right: containers on a bridged network can resolve each other's names. The internal Docker DNS server worcks for all containers started with the `--name` or `--net-alias` flag.
 
+`docker network prune` removes all unused networks on a Docker host.
+
 ### Building images 
 
 Example Dockerfile
