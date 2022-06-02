@@ -9,9 +9,17 @@
 * **Storage:** can be attached to a container to save data there 
 
 ### Containers
-Run a container
+Run a container from an image
 ```
-docker container run <container:label>
+docker container run (OPTIONS) [image:label] 
+```
+Options can be `--name [container_name]`, `-p [host_port]:[container_port]`, `-v [/host/path]:[/container/path]`, etc...
+
+`--rm` removes the container after finishing
+
+to run interactively 
+```
+docker container run -it [docker_image] /bin/bash
 ```
 List running containers
 ```
@@ -19,11 +27,11 @@ docker ps
 ```
 login to a running container
 ```
-docker exec -it <container-name> /bin/bash
+docker exec -it [container-name] /bin/bash
 ```
 stop and delete a running container
 ```
-docker rm -f <container-id>
+docker rm -f [container-id]
 ```
 
 
@@ -34,15 +42,15 @@ docker rm -f <container-id>
 
 Create a volume
 ```
-docker volume create <volume-name>
+docker volume create [volume-name]
 ```
 Run a container with a volume attached
 ```
-docker run -v <volume-name>:</mount/point/in/container> <image-name>
+docker run -v [volume-name]:[/mount/point/in/container] [image-name]
 ```
 Run a container with the current folder attached to a mountpoint
 ```
-docker run <image-name> -v "$(pwd):/</mount/point/in/container>" 
+docker run [image-name] -v "$(pwd):/[/mount/point/in/container]" 
 ```
 
 ### Networks
@@ -50,11 +58,11 @@ docker run <image-name> -v "$(pwd):/</mount/point/in/container>"
 
 > :point_right: _If two containers are on the same network, they can talk to each other. If they aren't, they can't._
 ```
-docker network create <network-name>
+docker network create [network-name]
 ```
 to use a specific network driver
 ```
-docker network create -d <bridge|overlay|macvlan> <network-name>
+docker network create -d [bridge|overlay|macvlan] [network-name]
 ```
 * `bridge` single host, NATed to the real network
 * `overlay` can span across multiple hosts for containers on each host to communicate directly, even on different physical networks
@@ -82,7 +90,7 @@ CMD ["node","index.js"]
 Create an image from the Dockerfile and the contents of the current dir
 
 ``` 
-docker image build -t <image_name>:<tag_version> .
+docker image build -t [image_name]:[tag_version] .
 ```
 
 ### Docker Swarm
@@ -94,7 +102,7 @@ docker swarm init
 ```
 Reveal the command and token needed to join an existing swarm
 ```
- docker swarm join-token <manager|worker>
+ docker swarm join-token [manager|worker]
  ```
  List all nodes in the swarm
  ```
@@ -104,7 +112,7 @@ Reveal the command and token needed to join an existing swarm
  ```
 docker service create --name my-svc --network my-net -p 80:80 --replicas 10 myrepo/myimage:v1
  ```
- `docker service ls` lists running services, while `docker service ps <service>` and `docker service inspect --pretty` give detailed information.
+ `docker service ls` lists running services, while `docker service ps [service]` and `docker service inspect --pretty` give detailed information.
  
  Scale a service up or down (add or remove replicas)
 ```
