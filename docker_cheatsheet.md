@@ -50,7 +50,7 @@ docker run -v [volume-name]:[/mount/point/in/container] [image-name]
 ```
 Run a container with the current folder attached to a mountpoint
 ```
-docker run [image-name] -v "$(pwd):/[/mount/point/in/container]" 
+docker run -v "$(pwd):/[/mount/point/in/container]" [image-name] 
 ```
 
 ### Networks
