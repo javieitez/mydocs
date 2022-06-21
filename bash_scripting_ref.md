@@ -1,3 +1,10 @@
+# Variables
+To declare a variable
+```bash
+VARNAME="value"
+```
+No spaces around `=`. String values must be quoted.
+
 ### Command Output to Variable
 ```bash
 variable=$(command)
