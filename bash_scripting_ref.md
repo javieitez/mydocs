@@ -7,10 +7,13 @@ No spaces around `=`. String values must be quoted.
 
 ### Command Output to Variable
 ```bash
-variable=$(command)
+TODAY=$(date)
+```
+A command inside backticks is expanded as well
+```bash
+Today is `date`
 ```
 ### Compare values
-
 `=` and `==` are for string comparisons
 
 `-eq` is for numeric comparisons, along with `-lt`, `-le`, `-gt`, `-ge`, and `-ne`
@@ -19,7 +22,7 @@ variable=$(command)
 ```bash
 [[ "$myINPUT" -ge "$myMIN" && "$myINPUT" -le "$myMAX" ]]
 ```
-## Parameters
+## Parameter variables
 ```bash
 ./myscript.sh param1 param2 param3 
 ```
@@ -32,14 +35,34 @@ variable=$(command)
 
 `$0` returns the name of the script
 
-## Special character expansion 
-Text inside backticks is executed like a command, similar to `$(command)`
-```bash
-echo "Today is `date`"
-```
-`echo number{1,2,3}` returns `number1 number2 number3`
+## Math and logic
 
+### Iteration
+`echo number{1,2,3}` returns `number1 number2 number3`
+### Math
 `echo $[2 + 2]` returns `4`
+
+`echo $[3 * 3]` returns `9` (multiplication)
+
+`echo $[3 ** 3]` returns `27` (exponentiation, as in `3 * 3 * 3`)
+
+`echo $[5/2]` returns `2` (division), while `echo $[5%2]` returns `1` (remainder) 
+
+`myVAR=1 && echo $myVAR` returns `1`
+
+`echo $[++myVAR]` returns `2` (sums 1 *before* returning)
+
+`echo $[myVAR++]` returns `2`, but increases the value of myVAR to `3` (sums 1 *after* returning)
+
+`echo $[--myVAR]` and `echo $[myVAR--]` would substract one, before and after
+### Logic
+`echo $[5==5]`, `echo $[5!=6]` and `echo $[5>=2]` return `1`, meaning `true`
+
+`echo $[5==4]`, `echo $[5!=5]` and `echo $[5<=2]` return `0`, meaning `false`
+
+`||` means `OR`
+
+`&&` means `AND`
 
 ## Single and Double Quotes
 `'Single quotes'` preserve the literal value of everything inside them, including `$` and the backtick. A single quote may not occur between single quotes, not even escaped by `\`.
