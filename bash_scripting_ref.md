@@ -45,5 +45,5 @@ echo "'single quotes' are taken literally inside double quotes"
 echo 'and "the other way around"'
 ```
 ## Further reading
-https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html
-https://tldp.org/LDP/abs/html/
+* https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html
+* https://tldp.org/LDP/abs/html/
