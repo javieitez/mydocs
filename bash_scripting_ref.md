@@ -38,12 +38,13 @@ Text inside backticks is executed like a command, similar to `$(command)`
 echo "Today is `date`"
 ```
 `echo number{1,2,3}` returns `number1 number2 number3`
+
 `echo $[2 + 2]` returns `4`
 
 ## Single and Double Quotes
-`'Single quotes'` preserve the literal value of everything inside them, including `$` and `. A single quote may not occur between single quotes, not even escaped by `\`.
+`'Single quotes'` preserve the literal value of everything inside them, including `$` and the backtick. A single quote may not occur between single quotes, not even escaped by `\`.
 
-`"Double quotes"` preserve the literal value of everything inside them, except for `$` and `. `\` escapes when preceding special characters, or else is shown literally.
+`"Double quotes"` preserve the literal value of everything inside them, except for `$` and `.`, `\` escapes when preceding special characters, or else is shown literally.
 ```bash
 echo "Double quotes can contain \"escaped double quotes\""
 ```
