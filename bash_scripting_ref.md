@@ -76,7 +76,9 @@ fi
 On divisions, the amount of decimals is set with the `scale` parameter.
 
 `echo "scale=1; 5 / 2" | bc` returns `2.5`
+
 `echo "scale=2; 5 / 2" | bc` returns `2.50`
+
 `echo "scale=9; 10 / 3" | bc` returns `3.333333333`
 
 ### Logic
