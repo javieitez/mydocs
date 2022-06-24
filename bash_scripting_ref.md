@@ -40,6 +40,7 @@ Today is `date`
 ### Iteration
 `echo number{1,2,3}` returns `number1 number2 number3`
 ### Math
+
 `echo $[2 + 2]` returns `4`
 
 `echo $[3 * 3]` returns `9` (multiplication)
@@ -55,6 +56,17 @@ Today is `date`
 `echo $[myVAR++]` returns `2`, but increases the value of myVAR to `3` (sums 1 *after* returning)
 
 `echo $[--myVAR]` and `echo $[myVAR--]` would substract one, before and after
+
+:info: Bash bundled math supports only integer operations. For floating point calculations you can use `bc`. 
+
+`echo "2.1 + 2.2" | bc` returns `4.3`
+
+On divisions, the amount of decimals is set with the `scale` parameter.
+
+`echo "scale=1; 5 / 2" | bc` returns `2.5`
+`echo "scale=2; 5 / 2" | bc` returns `2.50`
+`echo "scale=9; 10 / 3" | bc` returns `3.333333333`
+
 ### Logic
 `echo $[5==5]`, `echo $[5!=6]` and `echo $[5>=2]` return `1`, meaning `true`
 
