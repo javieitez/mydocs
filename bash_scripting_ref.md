@@ -90,6 +90,23 @@ On divisions, the amount of decimals is set with the `scale` parameter.
 
 `&&` means `AND`
 
+`-n` returns true if a variable is not empty (`non-zero` length).
+
+`-z` returns true if a variable is empty (`zero` length). 
+
+`-d` returns true if a dir exists
+
+`-f` returns true if a file exists
+
+`-s` returns true if a file exists and is not empty
+
+`-w` returns true if a file exists and is writable
+
+`-x` returns true if a file exists and is executable
+
+`file1 -nt file2` returns true if file1 is newer than file2. `-ot` for older. 
+
+
 ## Single and Double Quotes
 `'Single quotes'` preserve the literal value of everything inside them, including `$` and the backtick. A single quote may not occur between single quotes, not even escaped by `\`.
 
