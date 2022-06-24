@@ -18,6 +18,18 @@ Today is `date`
 
 `-eq` is for numeric comparisons, along with `-lt`, `-le`, `-gt`, `-ge`, and `-ne`
 
+### if/else statements
+```bash
+if [ $myVAR == "something" ]
+then
+  # do something 
+elif [ $myVAR == "something else" ]
+then
+  # do something else
+else
+  # all other cases 
+fi
+```
 ### Integer between a range
 ```bash
 [[ "$myINPUT" -ge "$myMIN" && "$myINPUT" -le "$myMAX" ]]
