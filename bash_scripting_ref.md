@@ -69,7 +69,7 @@ fi
 
 `echo $[--myVAR]` and `echo $[myVAR--]` would substract one, before and after
 
-:info: Bash bundled math supports only integer operations. For floating point calculations you can use `bc`. 
+:warning: Bash bundled math supports only integer operations. For floating point calculations you can use `bc`. 
 
 `echo "2.1 + 2.2" | bc` returns `4.3`
 
