@@ -25,5 +25,5 @@ If it still asks for a password, `tail -f /var/log/secure` on the server.
 The user's home folder's permissions must be 700, otherwise the key is rejected and SSH prompts for password.
 
 ## Sources
-https://www.redhat.com/sysadmin/configure-ssh-keygen
-https://chemicloud.com/kb/article/ssh-authentication-refused-bad-ownership-or-modes-for-directory/
+* https://www.redhat.com/sysadmin/configure-ssh-keygen
+* https://chemicloud.com/kb/article/ssh-authentication-refused-bad-ownership-or-modes-for-directory/
