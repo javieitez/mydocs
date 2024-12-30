@@ -1,3 +1,5 @@
+# Docker
+* https://containrrr.dev/watchtower/ Keep containes up to date automatically
 
 # My Rails stuff
 * https://rails-tutorial-javieitez.c9users.io/
