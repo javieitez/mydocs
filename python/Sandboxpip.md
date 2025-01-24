@@ -10,21 +10,11 @@ Some common methods:
 ### 1. **Using `virtualenv` or `venv`**
 `virtualenv` and `venv` are tools to create isolated Python environments. They allow you to install Python packages in an isolated directory, separate from the system-wide Python installation.
 
-1. **Install `virtualenv` or `venv`:**
-   - For `virtualenv`:
-     ```bash
-     sudo apt-get install python3-virtualenv
-     ```
-   - For `venv` (included in Python 3.3+):
+1. **Install `venv`:**
      ```bash
      sudo apt-get install python3-venv
      ```
 2. **Create a virtual environment:**
-   - Using `virtualenv`:
-     ```bash
-     virtualenv myenv
-     ```
-   - Using `venv`:
      ```bash
      python3 -m venv myenv
      ```
@@ -40,20 +30,17 @@ Some common methods:
    ```bash
    deactivate
    ```
-
 ### 2. **Using `pipx` for Isolated Application Installation**
-`pipx` is a tool to install and run Python applications in isolated environments. It is useful for installing Python CLI applications.
+`pipx` is a tool to install and run Python applications in isolated environments, useful for installing Python CLI applications.
 
-#### Steps:
-1. **Install `pipx`:**
    ```bash
    sudo apt-get install pipx
    ```
-2. **Ensure `pipx` is in your PATH:**
+Ensure `pipx` is in your PATH:
    ```bash
    pipx ensurepath
    ```
-3. **Install a Python application in an isolated environment:**
+Install a Python application in an isolated environment
    ```bash
    pipx install somepackage
    ```
