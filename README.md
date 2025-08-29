@@ -1,7 +1,6 @@
 # mydocs
 Just a placeholder for my own documents and notes
 
-* [Admin Stuff - Commands and goodies](admin_stuff.md)
 * [Bash Scripting Reference](bash_scripting_ref.md)
 * [CSS on a nutshell](CSS_on_a_nutshell.md)
 * [Docker Notes](docker_cheatsheet.md)
