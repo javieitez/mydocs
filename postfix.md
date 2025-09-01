@@ -42,7 +42,7 @@ Output log
 ```
 tail -f /var/log/mail.log
 ```
-`postfix stop`: Stops all Postfix processes, including the MTA and other services.
-`postfix start`: Starts all Postfix processes.
-`postfix flush`: Flushes the mail queue, attempting to deliver all queued messages. After this, Postfix will stop processing new messages until resumed.
-`postfix resume`: Resumes mail processing after using `postfix flush`.
+* `postfix stop`: Stops all Postfix processes, including the MTA and other services.
+* `postfix start`: Starts all Postfix processes.
+* `postfix flush`: Flushes the mail queue, attempting to deliver all queued messages. After this, Postfix will stop processing new messages until resumed.
+* `postfix resume`: Resumes mail processing after using `postfix flush`.
