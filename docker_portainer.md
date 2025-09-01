@@ -1,7 +1,5 @@
 ![](img/portainerlogo.png)
 
-Credentials are stored on the usual KeePass DB
-
 ## Upgrade to a newer version
 
 Remove the current instance
