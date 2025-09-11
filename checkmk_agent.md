@@ -48,7 +48,7 @@ For rpm or deb based installation, go to [[CHECKMK_Install_agent_in_linux_server
 
 # Manual Installation
 
-Download the following files from http://yourcheckmk.server/cgies/check_mk/wato.py?mode=download_agents_linux
+Download the following files from http://yourcheckmk.server/yoursite/check_mk/wato.py?mode=download_agents_linux
 
 * check_mk_agent.linux
 * xinetd.conf
