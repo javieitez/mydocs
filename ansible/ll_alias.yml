@@ -11,4 +11,4 @@
     when: ansible_os_family == "Debian"
     with_list:
       - /root/
-      - /home/adges00/
+      - /home/myuser/
