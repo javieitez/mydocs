@@ -1,0 +1,27 @@
+# Example stack for Redmine + MariaDB
+# Folders must be mounted for data persistance
+
+version: '3.1'
+
+services:
+
+  redmine:
+    image: redmine
+    restart: always
+    ports:
+      - 80:3000
+    environment:
+      REDMINE_DB_MYSQL: db
+      REDMINE_DB_PASSWORD: mypass
+      REDMINE_SECRET_KEY_BASE: supersecretkey
+    volumes:
+      - /opt/redmine:/usr/src/redmine
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: mypass
+      MARIADB_DATABASE: redmine
+    volumes:
+      - /opt/redminedb:/var/lib/mysql
