@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Roll Dice</title>
+ <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<script src="detectie.js"></script>
+
+<p id="diceOutput"></p>
+<p id="diceStats"></p>
+
+<p>
+	<button type="button" id="rollOnceButton" onclick="RollTheDice()">Roll it once &#127922;</button>
+	<DIV id="startStopButon"><button type="button" onclick='autoRoll("start", 100)'>Autoroll &#8635; &#127922;</button></DIV>
+</p>
+
+<table>
+	<tr>
+		<td>&#9856;<DIV id="ones"></DIV></td>
+		<td>&#9857;<DIV id="twos"></DIV></td>
+		<td>&#9858;<DIV id="threes"></DIV></td>
+		<td>&#9859;<DIV id="fours"></DIV></td>
+		<td>&#9860;<DIV id="fives"></DIV></td>
+		<td>&#9861;<DIV id="sixes"></DIV></td>
+	</tr><tr>
+	<td colspan="6" style="word-wrap: break-word">
+<DIV id="diceHistory"></DIV>
+</tr></td></table>
+
+
+
+<script>
+var rollTimes = 0;
+var rollHistory = [];
+var lastDice = "";
+var sidesCount = [0, 0, 0, 0, 0, 0];
+var startButton = "<button type=&quot;button&quot; onclick=&apos;autoRoll(&quot;start&quot;, 100)&apos;>Autoroll &#8635; &#127922;</button>"
+var stopButton = "<button type=&quot;button&quot; onclick=&apos;autoRoll(&quot;stop&quot;)&apos;>Stop it! &#8718; &#127922;</button>"
+
+function autoRoll(a, i){
+	var myInterval = setInterval(myTimer, i);
+
+	function myTimer() {
+		RollTheDice();};
+
+	function myStopFunction() {
+  clearInterval(myInterval);};
+
+	if (a == "start"){
+				///roll the dice every i seconds
+				myTimer();
+				///change the buttons
+				document.getElementById("rollOnceButton").disabled = true;
+				document.getElementById("startStopButon").innerHTML = stopButton
+
+	} else if (a == "stop") {
+				///enable the button
+				///document.getElementById("rollOnceButton").enabled = true;
+				///stop the timer
+				///myStopFunction();
+				///document.getElementById("startStopButon").innerHTML = startButton
+	}
+};
+
+
+function updateTable(){
+	document.getElementById("ones").innerHTML = sidesCount[0]
+	document.getElementById("twos").innerHTML = sidesCount[1]
+	document.getElementById("threes").innerHTML = sidesCount[2]
+	document.getElementById("fours").innerHTML = sidesCount[3]
+	document.getElementById("fives").innerHTML = sidesCount[4]
+	document.getElementById("sixes").innerHTML = sidesCount[5]
+
+}
+
+function countEachSide(i) {
+	sidesCount[i] +=1;
+	updateTable();
+};
+
+function numberToDice() {
+	if (rollHistory[0] == 1) { lastDice = "&#9856;" }
+	else if (rollHistory[0] == 2) { lastDice = "&#9857;" }
+	else if (rollHistory[0] == 3) { lastDice = "&#9858;" }
+	else if (rollHistory[0] == 4) { lastDice = "&#9859;" }
+	else if (rollHistory[0] == 5) { lastDice = "&#9860;" }
+	else if (rollHistory[0] == 6) { lastDice = "&#9861;" }
+	countEachSide((rollHistory[0] - 1));
+};
+
+
+function diceRollCount() {
+	rollTimes += 1;
+	document.getElementById("diceStats").innerHTML = "you rolled " + rollTimes + " times";
+};
+
+function logHistory() {
+	numberToDice();
+	document.getElementById("diceHistory").innerHTML = lastDice + " " + diceHistory.innerHTML ;
+};
+
+function RollTheDice() {
+	var diceRoll = Math.floor((Math.random() * 6) + 1);
+	var diceUpperFace = '<IMG SRC="img/dice_' + diceRoll + '.png">';
+	document.getElementById("diceOutput").innerHTML = diceUpperFace;
+	diceRollCount();
+	/// append to history array
+	rollHistory.unshift(diceRoll);
+	logHistory();
+	 }
+
+
+</script>
+
+
+</body>
+</html>
