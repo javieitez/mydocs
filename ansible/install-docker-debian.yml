@@ -67,7 +67,7 @@
 
     - name: Add me to the docker group
       user:
-        name: adges00
+        name: myuser
         groups: docker
         append: true
 
@@ -75,4 +75,5 @@
       service:
         name: docker
         state: started
+
         enabled: true
