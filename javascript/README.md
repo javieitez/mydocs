@@ -1,1 +1,1 @@
-vascript tiny demos and applets (work in progress).
+javascript tiny demos and applets (work in progress).
