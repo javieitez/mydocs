@@ -1,4 +1,11 @@
 # mydocs
-Just a placeholder for my own documents and notes, along with my bash scripts, ansible playbooks and other stuff.
+Just a placeholder for my own documents and notes, along with my python samples, bash scripts, ansible playbooks and other stuff.
+
+
+* `ansible` contains generic ansible playbooks and templates
+* `bash` contains tiny scripts and code examples that can be reused for bigger scripts
+* `python` contains small python programs and reusable functions
+* `howto` contains useful documentation about everyday topics in the life of a DevOps engineer
+
 
 Feel free to browse. If you find anything useful, adapt it to your own needs.
