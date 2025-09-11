@@ -8,4 +8,6 @@ Just a placeholder for my own documents and notes, along with my python samples,
 * `howto` contains useful documentation about everyday topics in the life of a DevOps engineer
 
 
+This is a personal useful repo and also some sort of a public portfolio. 
+
 Feel free to browse. If you find anything useful, adapt it to your own needs.
