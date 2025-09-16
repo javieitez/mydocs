@@ -1,10 +1,10 @@
-# Create an API user for Terraform
+## Create an API user for Terraform
 
 * Go to **Datacenter** in the left tab
 * navigate to **Permissions > Users** and add a new user with authentication in the PVE realm. 
 * Under **API tokens**, create a new token associated with the user. Save this key, it won’t be displayed again.
 
-# Add the Proxmox provider
+## Add the Proxmox provider
 
 * On an empty folder, create a blank file named `main.tf`
 * Go to [Telmate/proxmox](https://registry.terraform.io/providers/Telmate/proxmox/latest) and click on the **USE PROVIDER** button. Copy the block of text and paste it in the `main.tf` file.
