@@ -28,9 +28,9 @@ runcmd:
 
 ```tf
 resource "proxmox_vm_qemu" "cloudinit-example" {
-  vmid        = 100
+  #vmid        = 101 # comment to pick the next available ID 
   name        = "test-terraform0"
-  target_node = "pve"
+  target_node = "mypve"
   agent       = 1
   cores       = 2
   memory      = 1024
@@ -58,7 +58,7 @@ resource "proxmox_vm_qemu" "cloudinit-example" {
   disks {
     scsi {
       scsi0 {
-        # We have to specify the disk from our template, else tf will think it's not supposed to be there
+        # The disk from our template
         disk {
           storage = "local-lvm"
           # The size of the disk should be at least as big as the disk in the template. If it's smaller, the disk will be recreated
@@ -67,7 +67,7 @@ resource "proxmox_vm_qemu" "cloudinit-example" {
       }
     }
     ide {
-      # Some images require a cloud-init disk on the IDE controller, others on the SCSI or SATA controller
+      # Some images require a cloud-init disk on the IDE controller
       ide1 {
         cloudinit {
           storage = "local-lvm"
@@ -87,7 +87,7 @@ terraform {
   required_providers {
     proxmox = {
       source = "Telmate/proxmox"
-      version = ">=3.0.1rc4"
+      version = ">=3.0.1-rc4"
     }
   }
 }
