@@ -38,3 +38,8 @@ resource "proxmox_vm_qemu" "my_test_vm" {
 Run `terraform init`,`terraform plan` and `terraform apply`.
 
 Run `terraform destroy` to destroy the test VM.
+
+## Configure the VM
+
+At this point, the VM is created but it doesn't even boot. Let's extend the configuration
+
