@@ -13,6 +13,7 @@ resource "resource_type" "resource_name" {} # components of the infrastructure
 * `terraform validate` checks the syntax
 * `terraform plan` validates the project and resources
 * `terraform apply` applies the configuration and deploys the infrastructure
+* `terraform show` allows you to inspect the current infrastructure
 * `terraform destroy` deletes all the infrastucture
 
 ## Terraform Resources
