@@ -1,3 +1,10 @@
+## Basic syntax
+`.tf` files are organized in blocks, with the relevan parameters contained in brackets `{}`
+```yml
+terraform {} #terraform settings
+provider {} #specific provider plugin config 
+resource {} # components of the infrastructure
+```
 ## Terraform Resources
 
 * Official Documentation: https://developer.hashicorp.com/terraform/docs
