@@ -24,8 +24,17 @@ terraform apply -var "VM_name=YetAnotherName"
 ```
 Variables declared in the command line take precedence
 
+## Outputs
+Outputs are bits of information that can be defined in their own blocks and returned with the `terraform output` command
+
+```tf
+output "image_id" {
+  description = "ID of the Docker image"
+  value       = docker_image.nginx.id
+}
+```
 ## Key Concepts
-`state` are the components and resources of the running infrastructure: VMs, containers, networks, etc...
+* `state` are the components and resources of the running infrastructure: VMs, containers, networks, etc...
 
 ## Commands
 ### Preparation
