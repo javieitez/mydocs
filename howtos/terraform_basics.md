@@ -9,6 +9,16 @@ resource "resource_type" "resource_name" {} # components of the infrastructure
 ```
 Terraform parses al the `.tf` files in the current directory, so it can be organized in files like `main.tf`, `vars.tf`, etc..
 
+## Variables
+Variables are declared in their own block
+```tf
+variable "VM_name" {
+  description = "Some text here"
+  type        = string
+  default     = "MY_VM_NAME"
+}
+```
+then they are invoked with `var.variable_name`
 
 ## Key Concepts
 `state` are the components and resources of the running infrastructure: VMs, containers, networks, etc...
