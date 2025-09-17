@@ -1,4 +1,4 @@
-## Basic syntax and concepts
+## Basic syntax
 `.tf` files are organized in blocks, with the relevant parameters contained in brackets `{}`
 ```yml
 terraform { #terraform settings
@@ -7,6 +7,10 @@ terraform { #terraform settings
 provider "provider_name" {} #specific provider plugin config 
 resource "resource_type" "resource_name" {} # components of the infrastructure
 ```
+Terraform parses al the `.tf` files in the current directory, so it can be organized in files like `main.tf`, `vars.tf`, etc..
+
+
+## Key Concepts
 `state` are the components and resources of the running infrastructure: VMs, containers, networks, etc...
 
 ## Commands
