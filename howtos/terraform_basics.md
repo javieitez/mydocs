@@ -18,7 +18,11 @@ variable "VM_name" {
   default     = "MY_VM_NAME"
 }
 ```
-then they are invoked with `var.variable_name`
+They can be invoked in any other `.tf` with `var.variable_name` (without quotes) or via command line
+```
+terraform apply -var "VM_name=YetAnotherName"
+```
+Variables declared in the command line take precedence
 
 ## Key Concepts
 `state` are the components and resources of the running infrastructure: VMs, containers, networks, etc...
