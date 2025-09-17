@@ -1,9 +1,11 @@
 ## Basic syntax
-`.tf` files are organized in blocks, with the relevan parameters contained in brackets `{}`
+`.tf` files are organized in blocks, with the relevant parameters contained in brackets `{}`
 ```yml
-terraform {} #terraform settings
-provider {} #specific provider plugin config 
-resource {} # components of the infrastructure
+terraform { #terraform settings
+  required_providers {
+}
+provider "provider_name" {} #specific provider plugin config 
+resource "resource_name" {} # components of the infrastructure
 ```
 ## Terraform Resources
 
