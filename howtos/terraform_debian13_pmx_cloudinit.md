@@ -16,7 +16,7 @@ and convert it to a template
 qm template 999
 ```
 ## Create a Snippet
-Create the following file in `/var/lib/vz/snippets/qemu-guest-agent.yml`
+In the Proxmox node, create the following file in `/var/lib/vz/snippets/qemu-guest-agent.yml`
 ```shell
 #cloud-config
 runcmd:
