@@ -43,12 +43,13 @@ These commands are usually executed before deploying the infrastructure
 * `terraform fmt` returns a list of the files modified by terraform
 * `terraform validate` checks the syntax
 * `terraform plan` validates the project and resources
-* `terraform apply` applies the configuration and deploys the infrastructure
+* `terraform apply` applies the configuration and deploys the infrastructure. Use `-auto-approve` to skip the confirmation prompt. 
 ## Run time
 These commands are executed while the infrastructure is up and running
 * `terraform show` allows you to inspect the current infrastructure
 * `terraform state list` lists the current resources
 * `terraform destroy` deletes all the infrastucture
+* `terraform destroy -auto-approve` same, but without confirmation. **DANGER!!** 
 
 If changes are made to the infrastructure, you can run `terraform apply` again to review and apply them.
 
