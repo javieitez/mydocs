@@ -24,6 +24,10 @@ terraform apply -var "VM_name=YetAnotherName"
 ```
 Variables declared in the command line take precedence
 
+## Resources
+
+* `lifecycle { prevent_destroy = true }` inside a resource block prevents the resource from being destroyed. 
+
 ## Outputs
 Outputs are bits of information that can be defined in their own blocks and returned with the `terraform output` command
 
