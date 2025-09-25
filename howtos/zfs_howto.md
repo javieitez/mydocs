@@ -1,11 +1,9 @@
 ## Pre-Installation steps 
-### Disable UEFI Secure Boot
+### Disable UEFI Secure Boot on VMWare
 
 We need to add an unsigned kernel module, which is restricted by default in UEFI systems.
 
 Power off the VM and **Edit Settings** >> **VM Options** >> **Boot Options** and uncheck **Secure Boot**
-
-![change this](img/secure_boot.png)
 
 ## Installation
 ### CentOS/Redhat
