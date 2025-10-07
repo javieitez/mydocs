@@ -1,7 +1,7 @@
 Popular Linux commands and their powershell equivalents
 |Linux Command| Powershell Command|
 |---|---|
-|`curl ifconfig.me`|`Invoke-RestMethod https://ipinfo.io/ip`|
+|`curl ifconfig.me`|`Invoke-RestMethod https://ifconfig.me/ip`|
 |`cat ./filename.txt`|`Get-Content ./filename.txt`|
 |`tail ./filename.txt`|`Get-Content -Tail 7 ./filename.txt`|
 |`head ./filename.txt`|`Get-Content -Head 7 ./filename.txt`|
